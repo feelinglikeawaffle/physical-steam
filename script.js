@@ -1,6 +1,3 @@
-// -------------------------------
-// CONFIG
-// -------------------------------
 const API_KEY = "YOUR_STEAM_WEB_API_KEY"; 
 const RELAY_URL = "https://feelinglikeawaffle.github.io/physical-steam/relay.html";
 
@@ -14,7 +11,7 @@ const card = document.getElementById("card");
 let steamID = null;
 
 // -------------------------------
-// 1. Steam Login (OpenID)
+// Steam Login
 // -------------------------------
 steamLoginBtn.addEventListener("click", () => {
     const openidURL =
@@ -30,7 +27,7 @@ steamLoginBtn.addEventListener("click", () => {
 });
 
 // -------------------------------
-// 2. Detect SteamID from relay redirect
+// Detect SteamID from relay redirect
 // -------------------------------
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.has("steamid")) {
@@ -40,10 +37,13 @@ if (urlParams.has("steamid")) {
 }
 
 // -------------------------------
-// 3. Load Steam Library (real API)
+// Load Steam Library (via CORS proxy)
 // -------------------------------
 async function loadSteamLibrary() {
-    const url = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${API_KEY}&steamid=${steamID}&include_appinfo=1&include_played_free_games=1&format=json`;
+    const proxy = "https://cors-anywhere.herokuapp.com/";
+
+    const url = proxy + 
+        `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${API_KEY}&steamid=${steamID}&include_appinfo=1&include_played_free_games=1&format=json`;
 
     const response = await fetch(url);
     const data = await response.json();
@@ -61,7 +61,7 @@ async function loadSteamLibrary() {
 }
 
 // -------------------------------
-// 4. Generate Card
+// Generate Card
 // -------------------------------
 generateBtn.addEventListener("click", () => {
     const appid = gameSelect.value;
