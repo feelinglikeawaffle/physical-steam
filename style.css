@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #1b1b1b;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #111;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+#controls {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#preview {
+    flex: 1;
+}
+
+#card {
+    width: 300px;
+    height: 450px;
+    background: #222;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.modern {
+    border: 3px solid #4a90e2;
+    background: #0f1a2b;
+}
+
+.retro {
+    border: 3px solid #d4a373;
+    background: #3b2f2f;
+}
+
+.minimal {
+    border: 3px solid #fff;
+    background: #111;
+}
