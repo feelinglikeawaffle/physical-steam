@@ -7,31 +7,36 @@
 </head>
 <body>
 
-    <header>
-        <h1>Steam Game Card Generator</h1>
-    </header>
+<header>
+    <h1>Steam Game Card Generator</h1>
+</header>
 
-    <main>
-        <section id="controls">
-            <label>Choose a Game:</label>
-            <select id="gameSelect"></select>
+<main>
+    <section id="controls">
 
-            <label>Choose a Style:</label>
-            <select id="styleSelect">
-                <option value="modern">Modern Case</option>
-                <option value="retro">Retro Case</option>
-                <option value="minimal">Minimalist</option>
-            </select>
+        <button id="steamLoginBtn">Login with Steam</button>
 
-            <button id="generateBtn">Generate Card</button>
-        </section>
+        <div id="userInfo"></div>
 
-        <section id="preview">
-            <h2>Card Preview</h2>
-            <div id="card"></div>
-        </section>
-    </main>
+        <label>Choose a Game:</label>
+        <select id="gameSelect"></select>
 
-    <script src="script.js"></script>
+        <label>Choose a Style:</label>
+        <select id="styleSelect">
+            <option value="modern">Modern Case</option>
+            <option value="retro">Retro Case</option>
+            <option value="minimal">Minimalist</option>
+        </select>
+
+        <button id="generateBtn">Generate Card</button>
+    </section>
+
+    <section id="preview">
+        <h2>Card Preview</h2>
+        <div id="card"></div>
+    </section>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
