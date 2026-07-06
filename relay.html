@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+// Extract SteamID from OpenID response
+const params = new URLSearchParams(window.location.search);
+const claimedID = params.get("openid.claimed_id");
+
+// SteamID is the last part of the claimed_id URL
+const steamID = claimedID.split("/").pop();
+
+// Redirect back to your main site
+window.location.href = "https://your-main-site.com?steamid=" + steamID;
+</script>
+</body>
+</html>
