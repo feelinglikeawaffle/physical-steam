@@ -2,7 +2,7 @@
 // CONFIG
 // -------------------------------
 const API_KEY = "YOUR_STEAM_WEB_API_KEY"; 
-const RELAY_URL = "https://your-relay-page.com"; // You will create this next
+const RELAY_URL = "https://feelinglikeawaffle.github.io/physical-steam/relay.html";
 
 const steamLoginBtn = document.getElementById("steamLoginBtn");
 const userInfo = document.getElementById("userInfo");
