@@ -40,12 +40,13 @@ if (urlParams.has("steamid")) {
 // Load Steam Library (via CORS proxy)
 // -------------------------------
 async function loadSteamLibrary() {
-    const proxy = "https://cors-anywhere.herokuapp.com/";
-
-    const url = proxy + 
+    const steamURL =
         `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${API_KEY}&steamid=${steamID}&include_appinfo=1&include_played_free_games=1&format=json`;
 
-    const response = await fetch(url);
+    const proxyURL =
+        `https://steamproxy.sonjunigel2.workers.dev/?url=${encodeURIComponent(steamURL)}`;
+
+    const response = await fetch(proxyURL);
     const data = await response.json();
 
     const games = data.response.games;
@@ -59,6 +60,7 @@ async function loadSteamLibrary() {
         gameSelect.appendChild(option);
     });
 }
+
 
 // -------------------------------
 // Generate Card
